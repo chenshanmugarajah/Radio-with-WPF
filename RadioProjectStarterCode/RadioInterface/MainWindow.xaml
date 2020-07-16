@@ -5,8 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RadioInterface"
         mc:Ignorable="d"
-        Title="Chen's Calculator" Height="512" Width="620">
+        Title="Chen's Calculator" Height="512" Width="620" Background="#262626" FontSize="25" FontWeight="Bold" FontFamily="Comic Sans MS, Verdana">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
+        <Button x:Name="ButtonMainSwitch" Grid.Column="5" Grid.Row="9" Content="On" Background="DimGray" Click="ButtonMainSwitch_Click"/>
+
+        <Button x:Name="ButtonPlay" Grid.Column="7" Grid.Row="9" Content="Play" Background="DimGray" Click="ButtonPlay_Click" />
+
+        <Label x:Name="VoidSpeaker" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="9" Background="Black"/>
+        <Label x:Name="LabelDisplay" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="7" Grid.RowSpan="3" Background="DimGray" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+        <Button x:Name="ButtonVolumeUp" Grid.Column="3" Grid.Row="5" Content="+" Background="DimGray" Foreground="Black"/>
+        <Label x:Name="VoidVolume" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="3" Content="VOLUME" Foreground="DimGray" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="ButtonVolumeDown" Grid.Column="3" Grid.Row="7" Content="-" Background="DimGray" Foreground="Black"/>
+        <Label x:Name="LabelVolume" Grid.Column="5" Grid.Row="6" Content="1" Foreground="Black" Background="DimGray" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+        <Button x:Name="ButtonChannelUp" Grid.Column="9" Grid.Row="5" Content="+" Background="DimGray" Foreground="Black" Click="ButtonChannelUp_Click"/>
+        <Label x:Name="VoidChannel" Grid.Column="8" Grid.Row="6" Grid.ColumnSpan="3" Content="CHANNEL" Foreground="DimGray" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="ButtonChannelDown" Grid.Column="9" Grid.Row="7" Content="-" Background="DimGray" Foreground="Black" Click="ButtonChannelDown_Click"/>
+        <Label x:Name="LabelChannel" Grid.Column="7" Grid.Row="6" Content="1" Foreground="Black" Background="DimGray" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
     </Grid>
 </Window>
