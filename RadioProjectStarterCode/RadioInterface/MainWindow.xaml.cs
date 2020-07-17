@@ -65,7 +65,7 @@ namespace RadioInterface
                 LabelDisplay.Content = "";
 
                 radio.Channel = 1;
-                LabelChannel.Content = radio.Channel;#
+                LabelChannel.Content = radio.Channel;
                 radio.TurnOff();
 
             } else
