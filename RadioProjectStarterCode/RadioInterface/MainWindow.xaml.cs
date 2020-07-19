@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 using RadioApp;
 
 namespace RadioInterface
@@ -72,6 +73,7 @@ namespace RadioInterface
             {
                 radio.TurnOn();
                 ButtonMainSwitch.Content = "Off";
+                LabelDisplay.Content = "";
                 ButtonMainSwitch.Background = Brushes.White;
                 LabelChannel.Background = Brushes.White;
                 LabelVolume.Background = Brushes.White;
@@ -90,6 +92,20 @@ namespace RadioInterface
         private void ButtonPlay_Click(object sender, RoutedEventArgs e)
         {
             LabelDisplay.Content = radio.Play();
+        }
+
+        private Mp3Player _mp3Player;
+
+        private void initRadio()
+        {
+            using (OpenFileDialog dlgOpen = new OpenFileDialog())
+            {
+                dlgOpen.Filter("Mp3 File|*.mp3");
+                dlgOpen.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
+
+                _mp3Player = new Mp3Player(dlgOpen.FileName);
+                _mp3Player.Repeat = true;
+            }
         }
     }
 }
