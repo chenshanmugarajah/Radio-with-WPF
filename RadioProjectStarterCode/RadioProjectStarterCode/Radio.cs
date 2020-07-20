@@ -14,16 +14,24 @@ namespace RadioApp
 
         private int _channel;
         private bool _on;
+        private int _volume;
 
-        public Radio(int channel = 1, bool isOn = false)
+        public Radio(int channel = 1, bool isOn = false, int volume = 1)
         {
             _channel = channel;
             _on = isOn;
+            _volume = volume;
         }
 
         public int Channel {
             get { return _channel; }
             set { if (value >= 1 && value <= 4 && _on) _channel = value; }
+        }
+
+        public int Volume
+        {
+            get { return _volume; }
+            set { if (value >= 0 && value <= 10 && _on) _volume = value; }
         }
 
         public void TurnOff()

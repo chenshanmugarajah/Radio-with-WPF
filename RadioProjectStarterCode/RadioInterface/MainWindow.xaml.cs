@@ -65,8 +65,10 @@ namespace RadioInterface
                 ButtonPlay.Background = Brushes.DimGray;
                 LabelDisplay.Content = "";
 
-                radio.Channel = 1;
-                LabelChannel.Content = radio.Channel;
+                //radio.Channel = 1;
+                //LabelChannel.Content = radio.Channel;
+                //radio.Volume = 1;
+                //LabelVolume.Content = radio.Volume;
                 radio.TurnOff();
 
             } else
@@ -94,18 +96,17 @@ namespace RadioInterface
             LabelDisplay.Content = radio.Play();
         }
 
-        private Mp3Player _mp3Player;
-
-        private void initRadio()
+        private void ButtonVolumeUp_Click(object sender, RoutedEventArgs e)
         {
-            using (OpenFileDialog dlgOpen = new OpenFileDialog())
-            {
-                dlgOpen.Filter("Mp3 File|*.mp3");
-                dlgOpen.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
-
-                _mp3Player = new Mp3Player(dlgOpen.FileName);
-                _mp3Player.Repeat = true;
-            }
+            radio.Volume += 1;
+            LabelVolume.Content = radio.Volume;
         }
+
+        private void ButtonVolumeDown_Click(object sender, RoutedEventArgs e)
+        {
+            radio.Volume -= 1;
+            LabelVolume.Content = radio.Volume;
+        }
+
     }
 }
